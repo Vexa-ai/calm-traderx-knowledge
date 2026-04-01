@@ -1,14 +1,14 @@
 # Thels
 
 - **GitHub:** @Thels
-- **Name:** (pending API sync)
+- **Name:** —
 - **Role:** Contributor — CLI, calm-widgets
-- **Affiliation:** (pending API sync)
+- **Affiliation:** —
 - **Active since:** 2024
 
 ## Contributions
 
-- ~90 commits to [[architecture-as-code]]
+- 92 commits to [[architecture-as-code]]
 - Contributor to [[calm-cli]] and calm-widgets
 
 ## Sources

@@ -1,9 +1,9 @@
 # DovOps
 
 - **GitHub:** @DovOps
-- **Name:** (pending API sync)
+- **Name:** —
 - **Role:** Primary contributor to TraderX
-- **Affiliation:** (pending API sync)
+- **Affiliation:** —
 - **Active since:** 2023
 
 ## Contributions

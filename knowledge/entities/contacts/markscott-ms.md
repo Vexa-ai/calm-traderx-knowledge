@@ -1,14 +1,15 @@
 # markscott-ms
 
 - **GitHub:** @markscott-ms
-- **Name:** (pending API sync)
+- **Name:** Mark Scott
 - **Role:** Core contributor — CLI, spec, calm-server, calm-hub
-- **Affiliation:** (pending API sync)
+- **Affiliation:** —
+- **Location:** Glasgow
 - **Active since:** 2023
 
 ## Contributions
 
-- ~400 commits to [[architecture-as-code]]
+- 436 commits to [[architecture-as-code]]
 - Major contributor to [[calm-cli]], CALM spec, [[calm-server]], [[calm-hub]]
 - Second most active contributor to the project
 

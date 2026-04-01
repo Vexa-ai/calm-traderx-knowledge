@@ -1,9 +1,10 @@
 # TheJuanAndOnly99
 
 - **GitHub:** @TheJuanAndOnly99
-- **Name:** (pending API sync)
+- **Name:** Juan Estrella
 - **Role:** Contributor to TraderX
-- **Affiliation:** (pending API sync)
+- **Affiliation:** FINOS
+- **Location:** Barcelona
 - **Active since:** 2023
 
 ## Contributions

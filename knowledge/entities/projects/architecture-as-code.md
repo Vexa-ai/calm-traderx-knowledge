@@ -22,18 +22,24 @@ CALM (Common Architecture Language Model) is a declarative, JSON-based modeling 
 
 ## Key People
 
-- [[rocketstack-matt]] — Lead maintainer: spec, CLI, docs, AI, calm-server (~1000 commits)
-- [[markscott-ms]] — CLI, spec, calm-server, calm-hub (~400 commits)
-- [[aidanm3341]] — CLI, shared, widgets, VSCode plugin (~270 commits)
-- [[jimthompson5802]] — calm-hub-ui (~180 commits)
-- [[jpgough-ms]] — CALM spec, calm-hub (~170 commits)
-- [[LeighFinegold]] — VSCode plugin, CLI (~150 commits)
-- [[willosborne]] — CLI, shared (~120 commits)
-- [[Thels]] — CLI, calm-widgets (~90 commits)
+- [[rocketstack-matt]] — Lead maintainer: spec, CLI, docs, AI, calm-server (1055 commits)
+- [[markscott-ms]] — CLI, spec, calm-server, calm-hub (436 commits)
+- [[aidanm3341]] — CLI, shared, widgets, VSCode plugin, CalmHub UI (273 commits)
+- [[jimthompson5802]] — calm-hub-ui (181 commits)
+- [[jpgough-ms]] — CALM spec, calm-hub (168 commits)
+- [[LeighFinegold]] — VSCode plugin, CLI (155 commits)
+- [[willosborne]] — CLI, shared (122 commits)
+- [[Thels]] — CLI, calm-widgets (92 commits)
 
 ## Recent Releases
 
-- Awaiting live API sync for release data. Run `[scheduled:github-sync]` to populate.
+- **CLI v1.37.0** — 2026-04-01 (latest)
+- **CLI v1.36.0** — 2026-03-30
+- **CLI v1.35.0** — 2026-03-26
+- **CLI v1.34.4** — 2026-03-02
+- **CALM Server v0.2.1** — 2026-03-02
+- **CALM Server v0.2.0** — 2026-03-01
+- **CLI v1.34.2** — 2026-02-26
 
 ## Sources
 

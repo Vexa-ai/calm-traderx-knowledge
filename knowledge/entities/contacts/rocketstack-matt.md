@@ -1,15 +1,16 @@
 # rocketstack-matt
 
 - **GitHub:** @rocketstack-matt
-- **Name:** Matt Shersby
+- **Name:** Matthew Bain
 - **Role:** Lead maintainer, CALM spec + CLI + docs + AI + calm-server
-- **Affiliation:** (pending API sync)
+- **Affiliation:** —
+- **Location:** London
 - **Active since:** 2023
 
 ## Contributions
 
 - Primary author of the CALM specification
-- Lead maintainer of [[architecture-as-code]] with ~1000 commits
+- Lead maintainer of [[architecture-as-code]] with 1055 commits
 - Maintains [[calm-cli]], [[calm-server]], [[calm-ai]]
 - Contributor to [[traderx]]
 - Drives AI integration efforts (GitHub Copilot, Kiro, Claude)

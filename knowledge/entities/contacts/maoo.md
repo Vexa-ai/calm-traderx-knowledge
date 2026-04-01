@@ -3,7 +3,8 @@
 - **GitHub:** @maoo
 - **Name:** Maurizio Pillitu
 - **Role:** FINOS, contributor to TraderX
-- **Affiliation:** FINOS
+- **Affiliation:** FINOS / Session Technologies (CTO at FINOS, CEO at Session Technologies)
+- **Location:** Barcelona
 - **Active since:** 2023
 
 ## Contributions

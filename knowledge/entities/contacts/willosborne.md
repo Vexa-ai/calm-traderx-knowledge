@@ -1,14 +1,15 @@
 # willosborne
 
 - **GitHub:** @willosborne
-- **Name:** (pending API sync)
+- **Name:** Will Osborne
 - **Role:** Contributor — CLI, shared libraries
-- **Affiliation:** (pending API sync)
+- **Affiliation:** Morgan Stanley
+- **Location:** London
 - **Active since:** 2024
 
 ## Contributions
 
-- ~120 commits to [[architecture-as-code]]
+- 122 commits to [[architecture-as-code]]
 - Contributor to [[calm-cli]] and shared libraries
 
 ## Sources

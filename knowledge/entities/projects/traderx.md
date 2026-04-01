@@ -3,7 +3,10 @@
 - **Repo:** finos/traderX
 - **Status:** FINOS Sample Application
 - **License:** Apache 2.0
-- **Language:** Java, TypeScript, JavaScript, C#
+- **Stars:** 93
+- **Forks:** 125
+- **Language:** TypeScript, Java, JavaScript, C#
+- **Website:** https://demo.traderx.finos.org/
 
 ## Overview
 

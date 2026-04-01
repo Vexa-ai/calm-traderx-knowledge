@@ -9,7 +9,7 @@ TraderX is a FINOS sample trading application modeled using CALM 1.2. The archit
 ## Counts
 
 - **Nodes:** 14
-- **Relationships:** 18
+- **Relationships:** 17
 - **Flows:** 7
 
 ## Nodes
@@ -34,7 +34,7 @@ TraderX is a FINOS sample trading application modeled using CALM 1.2. The archit
 ## Relationships
 
 - 1 interacts (trader to web front end)
-- 15 connects (service-to-service, service-to-database, and LDAP connections)
+- 14 connects (service-to-service, service-to-database, and LDAP connections)
 - 1 composed-of (TraderX system composition)
 - 1 deployed-in (internal bank network deployment)
 
