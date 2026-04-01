@@ -8,8 +8,8 @@ TraderX is a FINOS sample trading application modeled using CALM 1.2. The archit
 
 ## Counts
 
-- **Nodes:** 12
-- **Relationships:** 17
+- **Nodes:** 14
+- **Relationships:** 18
 - **Flows:** 7
 
 ## Nodes
@@ -26,13 +26,15 @@ TraderX is a FINOS sample trading application modeled using CALM 1.2. The archit
 | people-service | service | People Service |
 | trade-feed | service | Trade Feed |
 | database | database | TraderX Database |
+| ingress | network | Ingress |
+| user-directory | ldap | User Directory |
 | traderx-system | system | TraderX System |
 | internal-bank-network | network | Internal Bank Network |
 
 ## Relationships
 
 - 1 interacts (trader to web front end)
-- 14 connects (service-to-service and service-to-database connections)
+- 15 connects (service-to-service, service-to-database, and LDAP connections)
 - 1 composed-of (TraderX system composition)
 - 1 deployed-in (internal bank network deployment)
 
@@ -42,8 +44,8 @@ TraderX is a FINOS sample trading application modeled using CALM 1.2. The archit
 2. **Process Trade** — Trade Processor receives events from Trade Feed, processes trades, updates database, publishes status
 3. **Load Accounts** — Trader loads account list via Account Service from database
 4. **Bootstrap Blotter** — Trader loads positions and subscribes to live Trade Feed updates
-5. **Manage Account** — Trader creates/updates accounts via Account Service
-6. **Manage Account Users** — Trader associates employees with accounts via People Service lookup
+5. **Manage Account** — Trader creates/updates accounts via Account Service with People Service validation
+6. **Manage Account Users** — Trader associates employees with accounts via People Service and LDAP directory lookup
 7. **Security Master Bootstrap** — Reference Data provides ticker symbol lookup for trade submission
 
 ## Source

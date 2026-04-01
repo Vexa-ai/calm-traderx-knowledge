@@ -67,8 +67,19 @@
       "unique-id": "database",
       "node-type": "database",
       "name": "TraderX Database",
-      "description": "H2 in-memory SQL database storing accounts, trades, and positions",
-      "development-language": "Java"
+      "description": "H2 in-memory SQL database storing accounts, trades, and positions"
+    },
+    {
+      "unique-id": "ingress",
+      "node-type": "network",
+      "name": "Ingress",
+      "description": "Nginx reverse proxy and API gateway routing external traffic to internal services"
+    },
+    {
+      "unique-id": "user-directory",
+      "node-type": "ldap",
+      "name": "User Directory",
+      "description": "External LDAP directory for employee lookup"
     },
     {
       "unique-id": "traderx-system",
@@ -228,7 +239,7 @@
     },
     {
       "unique-id": "trade-processor-to-trade-feed",
-      "description": "Trade Processor subscribes to Trade Feed for new trade events",
+      "description": "Trade Processor subscribes to and publishes on Trade Feed",
       "relationship-type": {
         "connects": {
           "source": { "node": "trade-processor" },
@@ -249,6 +260,17 @@
       "protocol": "JDBC"
     },
     {
+      "unique-id": "people-service-to-user-directory",
+      "description": "People Service looks up employees in external LDAP directory",
+      "relationship-type": {
+        "connects": {
+          "source": { "node": "people-service" },
+          "destination": { "node": "user-directory" }
+        }
+      },
+      "protocol": "LDAP"
+    },
+    {
       "unique-id": "traderx-system-composition",
       "description": "TraderX system is composed of all its services and database",
       "relationship-type": {
@@ -263,7 +285,8 @@
             "reference-data",
             "people-service",
             "trade-feed",
-            "database"
+            "database",
+            "ingress"
           ]
         }
       }
@@ -283,7 +306,8 @@
             "reference-data",
             "people-service",
             "trade-feed",
-            "database"
+            "database",
+            "ingress"
           ]
         }
       }
@@ -440,15 +464,14 @@
           "description": "Web GUI sends account create or update request to Account Service"
         },
         {
-          "relationship-unique-id": "account-service-to-database",
+          "relationship-unique-id": "account-service-to-people-service",
           "sequence-number": 3,
-          "description": "Account Service writes account data to the database"
+          "description": "Account Service validates people via People Service"
         },
         {
           "relationship-unique-id": "account-service-to-database",
           "sequence-number": 4,
-          "direction": "destination-to-source",
-          "description": "Database confirms the write to Account Service"
+          "description": "Account Service persists account changes to the database"
         },
         {
           "relationship-unique-id": "web-gui-to-account-service",
@@ -461,12 +484,12 @@
     {
       "unique-id": "flow-manage-account-users",
       "name": "Manage Account Users",
-      "description": "Trader associates employees with an account via People Service lookup",
+      "description": "Associate or disassociate users with a trading account via LDAP lookup",
       "transitions": [
         {
           "relationship-unique-id": "trader-uses-web-gui",
           "sequence-number": 1,
-          "description": "Trader opens the account user management view"
+          "description": "Trader opens account user management"
         },
         {
           "relationship-unique-id": "web-gui-to-account-service",
@@ -476,19 +499,29 @@
         {
           "relationship-unique-id": "account-service-to-people-service",
           "sequence-number": 3,
-          "description": "Account Service looks up employee via People Service"
+          "description": "Account Service requests people lookup from People Service"
+        },
+        {
+          "relationship-unique-id": "people-service-to-user-directory",
+          "sequence-number": 4,
+          "description": "People Service looks up employee in external LDAP directory"
+        },
+        {
+          "relationship-unique-id": "people-service-to-user-directory",
+          "sequence-number": 5,
+          "direction": "destination-to-source",
+          "description": "User Directory returns employee data"
         },
         {
           "relationship-unique-id": "account-service-to-people-service",
-          "sequence-number": 4,
+          "sequence-number": 6,
           "direction": "destination-to-source",
-          "description": "People Service returns employee details to Account Service"
+          "description": "People Service returns validated user to Account Service"
         },
         {
-          "relationship-unique-id": "web-gui-to-account-service",
-          "sequence-number": 5,
-          "direction": "destination-to-source",
-          "description": "Account Service returns result to Web GUI"
+          "relationship-unique-id": "account-service-to-database",
+          "sequence-number": 7,
+          "description": "Account Service persists user-account association"
         }
       ]
     },
