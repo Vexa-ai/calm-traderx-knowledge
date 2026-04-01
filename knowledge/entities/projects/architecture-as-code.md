@@ -1,0 +1,42 @@
+# Architecture as Code
+
+- **Repo:** finos/architecture-as-code
+- **Status:** FINOS Incubating
+- **License:** Apache 2.0
+- **Stars:** 303
+- **Language:** TypeScript, Java
+- **Website:** https://calm.finos.org
+
+## Overview
+
+CALM (Common Architecture Language Model) is a declarative, JSON-based modeling language for describing complex software architectures. The project provides the CALM specification, a CLI for validation and generation, a Hub for publishing architectures, and IDE extensions. It is hosted under FINOS (Fintech Open Source Foundation) and aims to bring the rigor of "infrastructure as code" to architecture documentation.
+
+## Sub-projects
+
+- [[calm-cli]] — CLI for validate, generate, template, docify (`@finos/calm-cli` on npm)
+- [[calm-hub]] — Java/Quarkus REST API backend (MongoDB) for publishing architectures
+- [[calm-hub-ui]] — React frontend for browsing published architectures
+- [[calm-server]] — Standalone HTTP validation server
+- [[calm-vscode]] — VSCode extension for CALM editing
+- [[calm-ai]] — AI assistant integration (GitHub Copilot, Kiro, Claude)
+
+## Key People
+
+- [[rocketstack-matt]] — Lead maintainer: spec, CLI, docs, AI, calm-server (~1000 commits)
+- [[markscott-ms]] — CLI, spec, calm-server, calm-hub (~400 commits)
+- [[aidanm3341]] — CLI, shared, widgets, VSCode plugin (~270 commits)
+- [[jimthompson5802]] — calm-hub-ui (~180 commits)
+- [[jpgough-ms]] — CALM spec, calm-hub (~170 commits)
+- [[LeighFinegold]] — VSCode plugin, CLI (~150 commits)
+- [[willosborne]] — CLI, shared (~120 commits)
+- [[Thels]] — CLI, calm-widgets (~90 commits)
+
+## Recent Releases
+
+- Awaiting live API sync for release data. Run `[scheduled:github-sync]` to populate.
+
+## Sources
+
+- GitHub: https://github.com/finos/architecture-as-code
+- Website: https://calm.finos.org
+- Last synced: 2026-04-01
