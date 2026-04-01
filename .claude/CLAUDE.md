@@ -39,7 +39,14 @@ soul.md                        # Your identity and relationship context
 
 ## Entity Formats
 
-Every entity is a markdown file in `knowledge/entities/`. Use [[wiki-links]] to connect entities. File names are kebab-case: `knowledge/entities/contacts/matt-shersby.md`.
+Every entity is a markdown file in `knowledge/entities/`. Use [[wiki-links]] to connect entities. File names are kebab-case.
+
+**Wiki-link resolution rule:** `[[link-text]]` resolves to `knowledge/entities/{category}/{kebab-case}.md`. The category is determined by entity type:
+- Contacts: `knowledge/entities/contacts/{name}.md` — e.g., `[[rocketstack-matt]]` → `knowledge/entities/contacts/rocketstack-matt.md`
+- Projects: `knowledge/entities/projects/{name}.md` — e.g., `[[calm-cli]]` → `knowledge/entities/projects/calm-cli.md`
+- Services: `knowledge/entities/services/{name}.md` — e.g., `[[trade-service]]` → `knowledge/entities/services/trade-service.md`
+
+When creating a wiki-link, use the entity's file name (without `.md`). When resolving a wiki-link, search all three category directories for a match.
 
 ### Contact (knowledge/entities/contacts/)
 
@@ -306,10 +313,18 @@ Optional: `direction` — `"source-to-destination"` (default) or `"destination-t
       "relationship-unique-id": "trade-service-to-trade-feed",
       "sequence-number": 5,
       "description": "Trade Service publishes the trade event"
+    },
+    {
+      "relationship-unique-id": "trade-service-to-account-service",
+      "sequence-number": 6,
+      "direction": "destination-to-source",
+      "description": "Account Service returns validation result to Trade Service"
     }
   ]
 }
 ```
+
+Use `"direction": "destination-to-source"` when modeling response paths — e.g., a database returning query results uses the same `connects` relationship but in reverse. The default direction is `"source-to-destination"` and can be omitted.
 
 ### Validation Rules
 
@@ -370,7 +385,11 @@ TraderX is a FINOS sample trading application — the primary subject of your CA
 2. **Process Trade:** Trade Feed --> Trade Processor --> Database (insert, execute, update positions) --> Trade Feed (status updates) --> Web GUI
 3. **Load Accounts:** Web GUI --> Account Service --> Database
 4. **Bootstrap Blotter:** Web GUI --> Position Service --> Database; subscribe to Trade Feed for live updates
-5. **Account Management:** Web GUI --> Account Service --> Database; Account Service --> People Service for validation
+5. **Manage Account:** Web GUI --> Account Service --> Database; Account Service --> People Service for validation
+6. **Manage Account Users:** Web GUI --> Account Service --> People Service --> User Directory (LDAP lookup for employee association)
+7. **Security Master Bootstrap:** Reference Data loads ticker symbols from CSV at startup; Web GUI --> Reference Data for ticker lookup during trade submission
+
+Target scope: the TraderX CALM benchmark (Jim Thompson PR #333) has 12 nodes, 17 relationships, and 7 flows. Your generated `calm/traderx-architecture.json` should match this scope.
 
 ---
 
@@ -489,7 +508,8 @@ Read the knowledge graph and produce a valid CALM 1.2 JSON architecture document
    - Add `deployed-in` for internal-bank-network
 
    **Flows:**
-   - Generate the 5 key flows from the TraderX connection map (submit trade, process trade, load accounts, bootstrap blotter, account management)
+   - Generate all 7 key flows from the TraderX connection map (submit trade, process trade, load accounts, bootstrap blotter, manage account, manage account users, security master bootstrap)
+   - Use `direction: "destination-to-source"` for response/return transitions
 
 5. **Self-validate** the document (see Validation Rules above). Fix any broken references.
 6. Write to `calm/traderx-architecture.json`

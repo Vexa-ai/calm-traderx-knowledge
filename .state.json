@@ -1,6 +1,6 @@
 {
-  "github_sync": { "last_synced_at": null },
-  "rss_sync": { "last_synced_at": null },
+  "github_sync": { "last_synced_at": "2020-01-01T00:00:00Z" },
+  "rss_sync": { "last_synced_at": "2020-01-01T00:00:00Z" },
   "calm_generate": { "last_run_at": null },
   "audit": { "last_run_at": null },
   "bootstrap_completed_at": null
