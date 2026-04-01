@@ -634,9 +634,10 @@ First-time setup. Run this when the workspace is empty or on initial deployment.
 
 9. **Update .state.json** with `bootstrap_completed_at` timestamp.
 
-10. **Commit and push everything:**
+10. **Save workspace, commit, and push everything:**
     ```bash
     cd /workspace
+    vexa workspace save
     git add -A
     git commit -m "bootstrap: initial knowledge base crawl"
     git push https://$GITHUB_TOKEN@github.com/Vexa-ai/calm-traderx-knowledge.git main
