@@ -39,7 +39,16 @@ CALM (Common Architecture Language Model) is a declarative, JSON-based modeling 
 - **CLI v1.34.4** — 2026-03-02
 - **CALM Server v0.2.1** — 2026-03-02
 - **CALM Server v0.2.0** — 2026-03-01
+- **CLI v1.34.3** — 2026-03-02
 - **CLI v1.34.2** — 2026-02-26
+
+## Recent Activity (2026-04-01)
+
+- PR #2294 merged: feat(calm-ui): retire use of oidc-client package ([[jimthompson5802]])
+- PR #2295 merged: ci(cli): release version 1.37.0
+- PR #2296 open: Use names in left bar rather than IDs ([[jpgough-ms]]) — calm-hub, calm-hub-ui
+- Issue #1243 open: Human-readable URLs for CalmHub resources ([[willosborne]]) — calm-hub
+- Issue #2267 closed: CalmHubUI: replace oidc-client package with oidc-client-ts ([[markscott-ms]])
 
 ## Sources
 

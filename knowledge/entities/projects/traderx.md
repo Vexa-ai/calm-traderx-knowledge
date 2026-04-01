@@ -32,6 +32,14 @@ TraderX is a FINOS sample trading application used as a reference implementation
 - [[maoo]] — FINOS, contributor
 - [[rocketstack-matt]] — Contributor
 
+## Recent Activity (2026-04-01)
+
+- PR #325 merged: Add CycloneDX SBOM generation across all services ([[jmolloy421]])
+- Issue #334 open: MAJOR: Migrate to Spec-Driven (GitHub Spec Kit) repo model ([[DovOps]])
+- Issue #331 open: Add CALM Architecture documentation for TraderX ([[jimthompson5802]])
+- PR #308 closed: Database improvement: replace H2 with Postgres
+- PR #321 closed: fix(web-front-end-angular): use production nginx build as default
+
 ## Sources
 
 - GitHub: https://github.com/finos/traderX
